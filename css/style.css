@@ -752,11 +752,11 @@ a{color:inherit; text-decoration:none}
 
 .floating-actions{
   position: fixed;
-  right: 14px;          /* مكانها أسفل اليمين */
+  left: 14px;          /* بقت على الشمال */
   bottom: 14px;
   display: flex;
   flex-direction: column;
-  gap: 8px;             /* مسافة صغيرة بين الأيقونات */
+  gap: 10px;           /* مسافة صغيرة ومريحة */
   z-index: 9999;
 }
 
@@ -787,16 +787,16 @@ a{color:inherit; text-decoration:none}
 }
 
 /* للموبايل */
+/* موبايل */
 @media (max-width: 768px){
   .floating-actions{
-    right: 10px;
+    left: 10px;
     bottom: 10px;
-    gap: 6px;
+    gap: 8px;
   }
 
   .float-btn img{
-    width: 42px;
-    height: 42px;
+    width: 50px;
+    height: 50px;
   }
 }
-
