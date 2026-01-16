@@ -500,6 +500,84 @@ a{color:inherit; text-decoration:none}
   .article-title{ font-size: 22px; }
 }
 
+
+/* ===== Image Cards ===== */
+
+.image-cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.image-card{
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  height: 280px;
+  box-shadow: 0 15px 35px rgba(0,0,0,.35);
+}
+
+.image-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+/* Overlay */
+.image-card-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.25),
+    rgba(0,0,0,.05)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px;
+  color: #fff;
+}
+
+/* Text */
+.image-card-overlay h3{
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.image-card-overlay p{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: .9;
+}
+
+/* Hover Effect */
+.image-card:hover img{
+  transform: scale(1.08);
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .image-cards{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px){
+  .image-cards{
+    grid-template-columns: 1fr;
+  }
+
+  .image-card{
+    height: 240px;
+  }
+}
+
 /* ===== Footer Mobile Layout Fix ===== */
 
 .footer .footer-grid{
@@ -664,6 +742,61 @@ a{color:inherit; text-decoration:none}
 @media (max-width: 899px){
   .footer-grid{
     grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Floating Buttons ===== */
+/* ======================================
+   Floating Action Buttons (Icon Only)
+   ====================================== */
+
+.floating-actions{
+  position: fixed;
+  right: 14px;          /* مكانها أسفل اليمين */
+  bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;             /* مسافة صغيرة بين الأيقونات */
+  z-index: 9999;
+}
+
+/* الرابط نفسه بدون أي خلفية */
+.float-btn{
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* الأيقونة */
+.float-btn img{
+  width: 48px;          /* تكبير الأيقونة */
+  height: 48px;
+  object-fit: contain;
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+/* Hover */
+.float-btn:hover img{
+  transform: scale(1.15);
+  opacity: .9;
+}
+
+/* للموبايل */
+@media (max-width: 768px){
+  .floating-actions{
+    right: 10px;
+    bottom: 10px;
+    gap: 6px;
+  }
+
+  .float-btn img{
+    width: 42px;
+    height: 42px;
   }
 }
 
