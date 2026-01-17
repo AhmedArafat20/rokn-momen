@@ -800,3 +800,21 @@ a{color:inherit; text-decoration:none}
     height: 50px;
   }
 }
+
+.center-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.center-cta .btn {
+  padding: 16px 30px;      /* كبر الزر */
+  font-size: 20px;         /* كبر الخط */
+}
+
+.center-cta .btn-icon {
+  width: 22px;             /* كبر الأيقونة */
+  height: 22px;
+}
